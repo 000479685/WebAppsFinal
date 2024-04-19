@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 //     res.send('This is a test');
 // })
 
-app.use(express.static(path.join(__dirname, 'main')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.use('/api/IntroWebAppsFinal/v1/users', UserRoutes);
 app.use('/api/v1/user/tracker', TrackerRoutes);
