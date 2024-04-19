@@ -15,6 +15,12 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.error(`Error connecting to the database: ${error}`);
 })
     
+
+app.get('/', (req, res) => 
+{
+    res.send('This is a test');
+})
+
 app.use(express.static(path.join(__dirname, 'main')));
 
 app.use('/api/IntroWebAppsFinal/v1/users', UserRoutes);
