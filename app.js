@@ -14,11 +14,6 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 }).catch((error) => {
     console.error(`Error connecting to the database: ${error}`);
 })
-
-
-// app.get('/', (req, res) => {
-//     res.send('INTRO WEBAPPS FINAL endpoints');
-// })
     
 app.use(express.static(path.join(__dirname, 'main')));
 
