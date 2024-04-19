@@ -62,7 +62,7 @@ async function loginUser(event)
         {
             localStorage.setItem('token', loggedInUserJSON.data.token)
             alert(loggedInUserJSON.message);
-            window.location.href = 'http://localhost:4000/Tracker.html'
+            window.location.href = 'https://webappsfinal.onrender.com/Tracker.html'
         }
     }catch(error)
     {
