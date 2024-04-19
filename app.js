@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 require('dotenv').config();
 const UserRoutes = require('./Routes/User');
 const TrackerRoutes = require('./Routes/Tracker');
@@ -15,10 +15,7 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.error(`Error connecting to the database: ${error}`);
 })
 
-
-// app.get('/', (req, res) => {
-//     res.send('INTRO WEBAPPS FINAL endpoints');
-// })
+app.get('/main', function(req, res) {res.render('index', {})})
     
 app.use(express.static(path.join(__dirname, 'main')));
 

@@ -122,25 +122,9 @@ const LoginUser = async (req, res) =>
     })
 }
 
-// const GetUserById = async (req, res) =>
-// {
-//     const query = req.body;
-//     try
-//     {
-//         const user = await UserModel.findById(req.email)
-//     } catch(error)
-//     {
-//         return res.status(500).json({
-//             message : 'Error finding user',
-//             data : user
-//         })
-//     }
-// }
-
 module.exports = 
 {
     RegisterUser,
-    GetUsers,
-    //GetUserById,
+    GetUsers,    
     LoginUser
 }
