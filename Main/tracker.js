@@ -129,7 +129,7 @@ function logout(event)
 {
     event.preventDefault();
     localStorage.removeItem('token');
-    window.location.href = 'http://localhost:4000';
+    window.location.href = 'https://webappsfinal.onrender.com';
 }
 
 function chartExplaination()
