@@ -14,8 +14,6 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 }).catch((error) => {
     console.error(`Error connecting to the database: ${error}`);
 })
-
-app.get('/main', function(req, res) {res.render('index', {})})
     
 app.use(express.static(path.join(__dirname, 'main')));
 
