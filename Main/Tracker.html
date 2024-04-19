@@ -10,39 +10,39 @@
 <main>
     <button class="bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="logout(event)">Logout</button>
     <div class="grid grid-cols-2 grap-2">
-        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-gray-500 m-3">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img class="mx-auto h-10 w-auto" src="https://s3.amazonaws.com/colorslive/jpg_512x512/848930-4BtFod0nmZp_rAGN.jpg" alt="Your Company">
                 <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Let's Track Some Expenses</h2>
             </div>
             
-            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
                 <form class="space-y-6" onsubmit="addEntry(event)">
                 <div>
                     <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
                     <div class="mt-2">
-                    <input id="title" name="title" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input id="title" name="title" type="text" required class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
 
                 <div>
                     <label for="expense" class="block text-sm font-medium leading-6 text-gray-900">Expense</label>
                     <div class="mt-2">
-                    <input id="expense" name="expense" type="number" step="0.01" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input id="expense" name="expense" type="number" step="0.01" required class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
             
                 <div>
                     <label for="date" class="block text-sm font-medium leading-6 text-gray-900">Date</label>
                     <div class="mt-2">
-                    <input id="date" name="date" type="date" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input id="date" name="date" type="date" required class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
                 
                 <div>
                     <label for="reason" class="block text-sm font-medium leading-6 text-gray-900">Reason</label>
                     <div class="mt-2">
-                    <input id="reason" name="reason" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input id="reason" name="reason" type="text" required class="pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
 
@@ -54,11 +54,17 @@
             </div>
         </div>        
 
-        <div class="border border-sky-500 mt-3 mr-3 py-3">
-            <ul id="entry-list">            
-            </ul>
+        <div>
+            <div class="border-4 border-sky-500 mt-3 mr-3 py-3">
+                <ul id="entry-list">            
+                </ul>
+            </div>
+            <div id="total-expenses">
+                total expenses : 0
+            </div>
         </div>
     </div>
+    <button onclick="chartExplaination()" style="color: white; padding-top: 20px;">HIDDEN BUTTON</button>
 </main>
 
 </html>

@@ -79,14 +79,22 @@ async function generateAllEntries()
         
 
     let i = 0;
+    let total = 0;
     for(let entry of entriesList.data)
     {
-        const newEntryHTML = `<li>${entry.title} <b>\$${entry.expense}</b> ${entry.date} ${entry.reason}</li>
+        const red = Math.floor(Math.random() * 200) + 55;
+        const blue = Math.floor(Math.random() * 200) + 55;
+        const green = Math.floor(Math.random() * 200) + 55;
+        const newEntryHTML = `<li class="pl-3" style="background-color: rgb(${red},${blue},${green})">${entry.title} <b>\$${entry.expense}</b> ${entry.date} ${entry.reason}</li>
         <button class="bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" id="delete-button" onclick="deleteEntry(${i})">Delete</button>
         `;
         entriesElement.innerHTML += newEntryHTML;
         i++
+        total += parseFloat(entry.expense);
     }
+
+    const totalExpensesElement = document.getElementById('total-expenses');    
+    totalExpensesElement.textContent = `Total expenses : \$${total.toFixed(2)}`;
 }
 
 async function deleteEntry(listIndex)
@@ -122,6 +130,11 @@ function logout(event)
     event.preventDefault();
     localStorage.removeItem('token');
     window.location.href = 'http://localhost:4000';
+}
+
+function chartExplaination()
+{
+    alert('Chart js does not function properly at the moment and to research how to get it working is beyond the scope I am willing to study');
 }
 
 checkIfUserLoggedIn();
